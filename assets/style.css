@@ -48,7 +48,7 @@ h3{font-family:"Syne",sans-serif;font-weight:700;color:var(--acid);margin:.9em 0
 .tool-card:hover strong{text-shadow:1px 0 rgba(255,0,255,.35),-1px 0 rgba(0,240,255,.35)}
 .tool-card span{font-size:.92rem;color:var(--muted)}
 .calc-form{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
-.field label{display:block;font-size:.84rem;color:#cfd4cf;font-weight:700;color:var(--muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:.1em}
+.field label{display:block;font-size:.84rem;font-weight:700;color:#d3d8d3;margin-bottom:6px;text-transform:uppercase;letter-spacing:.1em}
 .input-wrap{position:relative;display:flex;align-items:center}
 input,select{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px 4px 10px 4px;font-size:1rem;background:#050505;color:#fff;font-family:"Space Grotesk",sans-serif}
 input:focus,select:focus{outline:none;border-color:var(--acid);box-shadow:0 0 0 1px var(--acid),0 0 22px rgba(204,255,0,.35)}
