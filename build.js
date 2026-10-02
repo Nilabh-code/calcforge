@@ -287,6 +287,9 @@ function fieldHTML(f) {
   return `<div class="field"><label>${esc(f.label)}</label><div class="input-wrap"><input data-key="${f.key}" type="${type}" value="${f.value}">${f.unit ? `<span class="unit">${esc(f.unit)}</span>` : ''}</div></div>`;
 }
 
+const MARQUEE_ITEMS = ['EMI','SIP','FD','RD','PPF','EPF','GST','Income Tax FY 2026-27','CTC to In-Hand','HRA','BMI','Age','Percentage','Compound Interest'];
+const marqueeHTML = (rev) => `<div class="marquee${rev?' marquee-rev':''}" aria-hidden="true"><div class="marquee-track">${MARQUEE_ITEMS.concat(MARQUEE_ITEMS).map(w=>`<span>${w} ✦</span>`).join('')}</div></div>`;
+
 function pageShell({ title, desc, body, canonical }) {
   return `<!DOCTYPE html>
 <html lang="en">
@@ -299,12 +302,19 @@ function pageShell({ title, desc, body, canonical }) {
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(desc)}">
 <meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000" crossorigin="anonymous"></script>
 </head>
 <body>
+<div class="noise"></div>
+<div class="blob blob-a"></div><div class="blob blob-b"></div><div class="blob blob-c"></div>
+${marqueeHTML(false)}
 <header class="site"><div class="wrap"><a class="logo" href="index.html">Calc<span>Forge</span></a><nav><a href="index.html">All calculators</a><a href="about.html">About</a></nav></div></header>
 ${body}
+${marqueeHTML(true)}
 <footer class="site"><div class="wrap"><span>© 2026 CalcForge — free calculators, no sign-up.</span><span><a href="privacy-policy.html">Privacy</a> · <a href="about.html">About</a></span></div></footer>
 <script src="assets/calc.js"></script>
 </body>
