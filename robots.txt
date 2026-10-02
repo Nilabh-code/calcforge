@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nilabh-code.github.io/calcforge/sitemap.xml
